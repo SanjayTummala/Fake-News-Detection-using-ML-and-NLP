@@ -79,6 +79,6 @@ Before you begin, ensure you have met the following requirements:
 **Author**
 - SANJAY TUMMALA (https://github.com/SanjayTummala)
 
-- If you have any questions or need further assistance, feel free to contact us at asanjaytummala18@gmail.com
+- If you have any questions or need further assistance, feel free to contact us at sanjaytummala18@gmail.com
 
 ---
