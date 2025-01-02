@@ -6,7 +6,7 @@
 - [Project Structure](#project-structure)
 - [Datasets](#datasets)
 - [Model Name](#model-name)
-- [Images](#images)
+- [Model Performance](#model-performance)
 - [Prerequisites](#prerequisites)
 
 ## Introduction
@@ -39,32 +39,36 @@ A full training dataset with the following attributes:
   - `1`: unreliable
   - `0`: reliable
 
-### test.csv
-A testing training dataset with all the same attributes as `train.csv` without the label.
 
 ## Model Name
-The machine learning model used for fake news detection in this project is the **Passive Aggressive Classifier**.
+The machine learning model used for fake news detection in this project is the *Naive bayes Classifier and Random forest**.
 
 ### Model Description
-The Passive Aggressive Classifier (PAC) is a type of online learning algorithm for binary classification tasks. It is well-suited for applications like fake news detection. The PAC algorithm updates its model continuously as new data arrives, making it efficient for real-time classification.
+Naive Bayes Classifier:
+
+The Naive Bayes classifier is a probabilistic classifier based on Bayes' Theorem. It is particularly useful for large datasets with high dimensionality, such as text classification tasks.
+In this project, the Multinomial Naive Bayes variant is used, which is effective when the features (in this case, words) are discrete and follow a multinomial distribution. This model works by calculating the probability of each class (fake or real news) given the input features (word frequencies or TF-IDF scores). The model assigns the class with the highest posterior probability.
+Advantages:
+Fast and efficient for large datasets.
+Simple to implement and interpret.
+Works well with text data where feature independence is a reasonable assumption.
+Random Forest:
+
+The Random Forest is an ensemble learning method that constructs a multitude of decision trees during training and outputs the class that is the majority vote of the individual trees.
+It leverages the power of bagging (Bootstrap Aggregating) to reduce variance and prevent overfitting. By averaging multiple decision trees, it creates a robust model that can generalize well to unseen data.
+Advantages:
+Highly accurate and less prone to overfitting compared to individual decision trees.
+Can handle a large number of features and works well with both numerical and categorical data.
+The model provides feature importance scores, which can be useful for feature selection.
+
+### Model Performance
+Naive Bayes Classifier: Performs well for fast and efficient classification, especially when the dataset is large and contains independent features.
+Random Forest: Offers superior performance by reducing variance and is robust to overfitting, providing high accuracy on both training and test data.
+
 
 ### Model Accuracy
 The Passive Aggressive Classifier achieved an impressive accuracy of **96%** during evaluation. This high accuracy indicates its effectiveness in classifying news articles as reliable or unreliable.
 
-The model is pre-trained and available as `model.pkl` in this repository, allowing you to use it for making predictions.
-
-Feel free to explore the Jupyter Notebook (`Fake_News_Detector-PA.ipynb`) for more details about the model's training and performance.
-
-## Images
-This section provides visuals and diagrams used in the project:
-- Block Diagram
-![Block Diagram](Images/BlockDiagram.jpg)
-
-- Process Flow Diagram
-![Process Flow Diagram](Images/Processflow.jpg)
-
-- Confusion Matrix
-![Confusion Matrix](Images/ConfusionMatrix.jpg)
 
 ## Prerequisites
 Before you begin, ensure you have met the following requirements:
