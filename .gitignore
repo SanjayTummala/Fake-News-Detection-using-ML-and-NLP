@@ -1,0 +1,8 @@
+# Ignore big datasets folder
+datasets/
+
+# Ignore large training dataset in backend
+backend/dataset_final.csv
+
+# Ignore node_modules (very large)
+frontend/node_modules/
