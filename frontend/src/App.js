@@ -383,7 +383,7 @@ function App() {
           {/* Footer */}
           <footer className="footer">
             <span>
-              Developed by <strong>Sanjay Kumar Tummala</strong> · React · Flask
+              Developed by <strong>Sanjay Kumar</strong> · React · Flask
               · Scikit-learn · TF-IDF · Naive Bayes
             </span>
           </footer>
