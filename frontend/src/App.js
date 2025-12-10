@@ -62,7 +62,7 @@ function App() {
           {/* Header */}
           <header className="card-header">
             <div>
-              <h1>📰 Fake News Radar</h1>
+              <h1>📰 Fake News Detection Radar</h1>
               <p className="subtitle">
                 Paste any headline or short news snippet and let this{" "}
                 <strong>ML-powered radar</strong> estimate whether it looks more
@@ -364,7 +364,7 @@ function App() {
           {/* Footer */}
           <footer className="footer">
             <span>
-              Designed & built as a personal project by{" "}
+              Designed & built by{" "}
               <strong>Sanjay Kumar</strong> · React · Flask · scikit-learn
             </span>
           </footer>
