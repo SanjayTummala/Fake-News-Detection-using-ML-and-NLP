@@ -258,7 +258,7 @@ function App() {
                   </div>
 
                   <div className="example-card real-sample">
-                    <h4>🟢 Real-style Examples</h4>
+                    <h4>🟢 Real-News Examples</h4>
                     <ul>
                       <li>
                         The central bank announced a 0.25% change in the repo
