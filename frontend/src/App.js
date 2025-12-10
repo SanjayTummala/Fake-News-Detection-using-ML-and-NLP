@@ -236,7 +236,7 @@ function App() {
 
                 <div className="examples-grid">
                   <div className="example-card fake-sample">
-                    <h4>🔴 Fake-style Examples</h4>
+                    <h4>🔴 Fake-News Examples</h4>
                     <ul>
                       <li>
                         Scientists confirm that drinking only hot water for
