@@ -8,7 +8,9 @@ It combines a trained ML model, a Flask API, and a React frontend, all deployed 
 
 ## 🔗 Live Demo
 
-- 🌐 **Fake News Detector** https://fake-news-detection-using-ml-and-nlp.vercel.app/
+- 🌐 **Fake News Detector:** https://fake-news-detection-using-ml-and-nlp.vercel.app/  
+ 
+
 ---
 
 ## 🧩 Tech & Tools
@@ -21,8 +23,6 @@ It combines a trained ML model, a Flask API, and a React frontend, all deployed 
 ![Render](https://img.shields.io/badge/API-Render-46E3B7?logo=render&logoColor=white)
 
 ---
-
-
 
 ## 🚀 Features
 
@@ -87,8 +87,6 @@ The model and vectorizer are stored as:
       │   └─ tfidf.pkl     # TF-IDF vectorizer
       └─ README.md         # Project documentation
 
-
-
 ---
 
 ## 📸 Screenshots (Placeholders)
@@ -146,13 +144,12 @@ Enthusiast in:
 
 ---
 
-## ⭐ Support
+## 📜 License
 
-If you like **Fake News Detector**:
+This project is licensed under the **GNU General Public License v3.0 (GPL-3.0)**.
 
-- 🌟 Star this repository  
-- 🧪 Try different crazy / viral headlines  
-- 🗣️ Share feedback or ideas for improvements  
+You are free to use, modify, and distribute this software under the terms of the GPLv3.  
+See the [`LICENSE`](LICENSE) file for the full license text.
 
 ---
 
