@@ -62,7 +62,7 @@ function App() {
           {/* Header */}
           <header className="card-header">
             <div>
-              <h1>📰 Fake News Detection Web App</h1>
+              <h1>📰 Fake News Detection</h1>
               <p className="subtitle">
                 A complete end-to-end Machine Learning project where I detect
                 whether a news statement is likely to be{" "}
@@ -75,7 +75,7 @@ function App() {
             <div className="header-right">
               <span className="badge">ML Project</span>
               <span className="status-pill">
-                ⚛ React (Vercel) · 🐍 Flask API (Render)
+                ⚛ React  · 🐍 Flask API
               </span>
             </div>
           </header>
