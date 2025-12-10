@@ -246,8 +246,8 @@ function App() {
                         New study claims that eating only chocolate for a week can improve eyesight and increase height.
                       </li>
                       <li>
-                        A new secret rule bans the use of social media after
-                        9 PM without a special government licence.
+                        Tech companies are secretly installing microchips in 
+                        smartphone chargers to read users thoughts during sleep
                       </li>
                       <li>
                         Space agencies admit that the Earth is flat and all
