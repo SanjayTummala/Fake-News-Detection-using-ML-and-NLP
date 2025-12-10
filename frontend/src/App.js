@@ -239,20 +239,20 @@ function App() {
                     <h4>🔴 Fake-style Examples</h4>
                     <ul>
                       <li>
-                        “Scientists confirm that drinking only hot water for
-                        three days can cure all types of cancer.”
+                        Scientists confirm that drinking only hot water for
+                        three days can cure all types of cancer.
                       </li>
                       <li>
-                        “A national bank has cancelled all existing loans taken
-                        before 2020 with no conditions.”
+                        A national bank has cancelled all existing loans taken
+                        before 2020 with no conditions.
                       </li>
                       <li>
-                        “A new secret rule bans the use of social media after
-                        9 PM without a special government licence.”
+                        A new secret rule bans the use of social media after
+                        9 PM without a special government licence.
                       </li>
                       <li>
-                        “Space agencies admit that the Earth is flat and all
-                        images were edited in Photoshop.”
+                        Space agencies admit that the Earth is flat and all
+                        images were edited in Photoshop.
                       </li>
                     </ul>
                   </div>
@@ -261,24 +261,24 @@ function App() {
                     <h4>🟢 Real-style Examples</h4>
                     <ul>
                       <li>
-                        “The central bank announced a 0.25% change in the repo
-                        rate during its latest policy meeting.”
+                        The central bank announced a 0.25% change in the repo
+                        rate during its latest policy meeting.
                       </li>
                       <li>
-                        “The health ministry released updated guidelines on
-                        vaccination schedules for children.”
+                        The health ministry released updated guidelines on
+                        vaccination schedules for children.
                       </li>
                       <li>
-                        “The election commission published the final list of
-                        candidates for the upcoming state elections.”
+                        The election commission published the final list of
+                        candidates for the upcoming state elections.
                       </li>
                       <li>
-                        “The national transport authority introduced updated
-                        rules for highway safety and speed limits.”
+                        The national transport authority introduced updated
+                        rules for highway safety and speed limits.
                       </li>
                       <li>
-                        “Two countries signed a bilateral agreement to
-                        strengthen cybersecurity cooperation.”
+                        Two countries signed a bilateral agreement to
+                        strengthen cybersecurity cooperation.
                       </li>
                     </ul>
                   </div>
