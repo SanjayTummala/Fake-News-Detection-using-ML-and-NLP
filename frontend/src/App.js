@@ -62,18 +62,20 @@ function App() {
           {/* Header */}
           <header className="card-header">
             <div>
-              <h1>Fake News Detection System</h1>
+              <h1>📰 Fake News Detection Web App</h1>
               <p className="subtitle">
-                A full-stack machine learning project that classifies news text
-                as <strong>fake</strong> or <strong>real</strong> using{" "}
+                A complete end-to-end Machine Learning project where I detect
+                whether a news statement is likely to be{" "}
+                <strong>fake</strong> or <strong>real</strong> using{" "}
                 <strong>TF-IDF</strong> features and a{" "}
-                <strong>Multinomial Naive Bayes</strong> model.
+                <strong>Multinomial Naive Bayes</strong> model served via a
+                Flask API.
               </p>
             </div>
             <div className="header-right">
               <span className="badge">ML Project</span>
               <span className="status-pill">
-                Frontend: Vercel · API: Render
+                ⚛ React (Vercel) · 🐍 Flask API (Render)
               </span>
             </div>
           </header>
@@ -114,7 +116,7 @@ function App() {
                 <textarea
                   className="textarea"
                   rows={6}
-                  placeholder="Example: The government announced a new national cybersecurity policy for critical infrastructure..."
+                  placeholder="Example: The government announced a new cybersecurity policy for critical infrastructure..."
                   value={text}
                   onChange={(e) => setText(e.target.value)}
                 />
@@ -152,7 +154,7 @@ function App() {
                 >
                   <div className="result-header">
                     <span className="pill">
-                      {isFake ? "Fake News" : isReal ? "Real News" : "Result"}
+                      {isFake ? "🔴 Fake News" : isReal ? "🟢 Real News" : "Result"}
                     </span>
                   </div>
                   <p className="result-text">
@@ -161,10 +163,11 @@ function App() {
                     model.
                   </p>
                   <p className="note">
-                    Note: This is a machine learning prediction based on the
+                    ⚠ This is a machine learning prediction based on the
                     training data used. It should be treated as a{" "}
-                    <strong>supporting signal</strong>, not as final proof.
-                    Always verify important information with trusted sources.
+                    <strong>supporting signal</strong>, not final proof. Always
+                    verify important or sensitive information with trusted
+                    sources.
                   </p>
                 </div>
               )}
@@ -176,24 +179,28 @@ function App() {
           {/* TAB: ABOUT / PROJECT OVERVIEW */}
           {activeTab === "about" && (
             <div className="info-section">
-              <h2>Project Overview</h2>
+              <h2>📘 Project Overview</h2>
               <p>
-                This project was developed to explore how{" "}
-                <strong>Machine Learning</strong> and{" "}
-                <strong>Natural Language Processing (NLP)</strong> can help in
-                identifying potentially fake or misleading news content.
+                This web application was developed to understand how{" "}
+                <strong>Machine Learning (ML)</strong> and{" "}
+                <strong>Natural Language Processing (NLP)</strong> can be used
+                in a practical, full-stack project. The focus is not only on
+                model accuracy, but also on how to serve the model through an
+                API and integrate it with a modern frontend.
               </p>
               <p>
-                The core idea is simple: take a piece of news text, convert it
-                into numerical features using <strong>TF-IDF</strong>, and then
-                apply a <strong>Multinomial Naive Bayes</strong> classifier to
-                decide whether the text is more likely to be{" "}
-                <strong>fake</strong> or <strong>real</strong>.
+                The idea is simple: the user enters a news headline or short
+                article, the text is converted into numerical features using{" "}
+                <strong>TF-IDF</strong>, and a{" "}
+                <strong>Multinomial Naive Bayes</strong> classifier predicts
+                whether it is more likely to be <strong>fake</strong> or{" "}
+                <strong>real</strong>.
               </p>
               <p>
-                The goal of this application is educational: to practice
-                end-to-end ML deployment, from data preprocessing and model
-                training to building a usable UI and exposing a REST API.
+                Through this project, I practised data preprocessing, model
+                training, REST API design, and deployment using platforms like{" "}
+                <strong>Render</strong> (backend) and <strong>Vercel</strong>{" "}
+                (frontend).
               </p>
             </div>
           )}
@@ -201,26 +208,26 @@ function App() {
           {/* TAB: DATASET & SAMPLES */}
           {activeTab === "dataset" && (
             <div className="info-section">
-              <h2>Dataset & Model Details</h2>
+              <h2>📊 Dataset & Model Details</h2>
               <p>
-                The model has been trained on a combined dataset containing
-                tens of thousands of labeled news samples. Each record is
-                tagged as either <strong>fake</strong> or{" "}
-                <strong>real</strong> based on its source and verification.
+                The model is trained on a combined dataset containing thousands
+                of labeled news samples. Each news item is tagged as{" "}
+                <strong>fake</strong> or <strong>real</strong> based on its
+                source and verification.
               </p>
               <ul>
-                <li>Raw text is cleaned and converted to lowercase.</li>
+                <li>Text is cleaned (basic preprocessing) and lower-cased.</li>
                 <li>
-                  Text is transformed into feature vectors using{" "}
-                  <strong>TF-IDF</strong> (Term Frequency–Inverse Document
-                  Frequency).
+                  Features are extracted using{" "}
+                  <strong>TF-IDF (Term Frequency–Inverse Document
+                  Frequency)</strong>.
                 </li>
                 <li>
                   A <strong>Multinomial Naive Bayes</strong> classifier from{" "}
-                  <strong>scikit-learn</strong> is trained on these vectors.
+                  <strong>scikit-learn</strong> is trained on these features.
                 </li>
                 <li>
-                  The trained model and vectorizer are stored as{" "}
+                  The trained model and TF-IDF vectorizer are stored as{" "}
                   <code>model.pkl</code> and <code>tfidf.pkl</code> and loaded
                   by the Flask backend.
                 </li>
@@ -233,44 +240,44 @@ function App() {
               </ul>
 
               <p className="note">
-                Future improvements may include experimenting with transformer
-                models (e.g., BERT), more recent datasets, and support for
+                🔧 Future ideas: try transformer-based models (e.g. BERT), use
+                more recent datasets, and extend the app with support for
                 multiple languages.
               </p>
 
               <div className="examples-section">
-                <h3>Example Types of Fake vs Real News</h3>
+                <h3>Example Styles of Fake vs Real News</h3>
                 <p>
-                  These are synthetic examples that represent the kind of
-                  content that usually appears as fake or real in the training
-                  data.
+                  These are synthetic examples that roughly represent the style
+                  of content that often appears as fake vs real in common
+                  datasets.
                 </p>
 
                 <div className="examples-grid">
                   <div className="example-card fake-sample">
-                    <h4>Fake-style Examples</h4>
+                    <h4>🔴 Fake-style Examples</h4>
                     <ul>
                       <li>
                         “Scientists confirm that drinking only hot water for
                         three days can cure all types of cancer.”
                       </li>
                       <li>
-                        “A major national bank has cancelled all loans taken
-                        before 2020 without any conditions.”
+                        “A national bank has cancelled all existing loans taken
+                        before 2020 with no conditions.”
                       </li>
                       <li>
-                        “A secret law bans the use of social media after 9 PM
-                        without a special license.”
+                        “A new secret rule bans the use of social media after
+                        9 PM without a special government licence.”
                       </li>
                       <li>
                         “Space agencies admit that the Earth is flat and all
-                        satellite images were edited.”
+                        images were edited in Photoshop.”
                       </li>
                     </ul>
                   </div>
 
                   <div className="example-card real-sample">
-                    <h4>Real-style Examples</h4>
+                    <h4>🟢 Real-style Examples</h4>
                     <ul>
                       <li>
                         “The central bank announced a 0.25% change in the repo
@@ -302,22 +309,23 @@ function App() {
           {/* TAB: TECH & ARCHITECTURE / SYSTEM DESIGN */}
           {activeTab === "stack" && (
             <div className="info-section">
-              <h2>System Design & Technologies</h2>
+              <h2>🛠 System Design & Technologies</h2>
               <p>
-                This application is structured as a classic{" "}
-                <strong>frontend–backend</strong> system with a separate{" "}
-                <strong>machine learning</strong> layer.
+                The application follows a realistic{" "}
+                <strong>frontend–backend</strong> architecture with a clear{" "}
+                <strong>ML model</strong> layer behind the API. This is similar
+                to how many production ML systems are structured.
               </p>
 
               <div className="stack-grid">
                 <div className="stack-card">
-                  <h3>Frontend (Client)</h3>
+                  <h3>🖥 Frontend (Client)</h3>
                   <ul>
-                    <li>Built with React as a Single Page Application (SPA)</li>
+                    <li>React Single Page Application (SPA)</li>
                     <li>Custom responsive layout using plain CSS</li>
                     <li>Uses Fetch API to send JSON requests to the backend</li>
                     <li>
-                      Reads API base URL from{" "}
+                      Reads the API base URL from{" "}
                       <code>REACT_APP_API_URL</code> environment variable
                     </li>
                     <li>Deployed on Vercel</li>
@@ -325,9 +333,9 @@ function App() {
                 </div>
 
                 <div className="stack-card">
-                  <h3>Backend (API)</h3>
+                  <h3>⚙ Backend (API)</h3>
                   <ul>
-                    <li>Python 3 with Flask web framework</li>
+                    <li>Python 3 with Flask</li>
                     <li>REST endpoint: <code>POST /predict</code></li>
                     <li>Flask-CORS enabled for cross-origin requests</li>
                     <li>
@@ -339,35 +347,35 @@ function App() {
                 </div>
 
                 <div className="stack-card">
-                  <h3>ML & NLP Layer</h3>
+                  <h3>🤖 ML & NLP Layer</h3>
                   <ul>
                     <li>Implemented using scikit-learn</li>
-                    <li>TF-IDF vectorizer for feature extraction</li>
+                    <li>TF-IDF vectorizer for text feature extraction</li>
                     <li>Multinomial Naive Bayes classifier</li>
                     <li>Binary classification: fake vs real</li>
-                    <li>Serialized using Python pickle</li>
+                    <li>Model serialized using Python pickle</li>
                   </ul>
                 </div>
 
                 <div className="stack-card">
-                  <h3>Overall Flow</h3>
+                  <h3>🔗 End-to-End Flow</h3>
                   <ul>
-                    <li>User submits text via React UI</li>
-                    <li>Frontend sends POST request to Flask API</li>
+                    <li>1️⃣ User submits text from the React UI</li>
+                    <li>2️⃣ Frontend sends a POST request to the Flask API</li>
                     <li>
-                      Backend vectorizes text and calls the ML model for
-                      prediction
+                      3️⃣ Backend vectorizes the text and calls the ML model for
+                      a prediction
                     </li>
-                    <li>API returns the label as JSON</li>
-                    <li>UI displays the result in a user-friendly format</li>
+                    <li>4️⃣ API returns the label as JSON</li>
+                    <li>5️⃣ UI displays the result in a readable format</li>
                   </ul>
                 </div>
               </div>
 
               <p className="note">
-                This setup is intentionally simple but complete: it covers data
-                preprocessing, model training (offline), backend integration,
-                and deployment on cloud platforms used in modern web projects.
+                The goal is to keep the implementation understandable while
+                still showing a realistic ML workflow: data → model → API →
+                frontend → user.
               </p>
             </div>
           )}
@@ -376,7 +384,7 @@ function App() {
           <footer className="footer">
             <span>
               Developed by <strong>Sanjay Kumar Tummala</strong> · React · Flask
-              · Scikit-learn · TF-IDF · Naive Bayes · Deployed on Vercel & Render
+              · Scikit-learn · TF-IDF · Naive Bayes
             </span>
           </footer>
         </div>
