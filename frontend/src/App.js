@@ -39,7 +39,7 @@ function App() {
     } catch (err) {
       console.error("Error calling backend:", err);
       setError(
-        "The prediction service is not reachable at the moment. Please try again in a few seconds."
+        "The prediction service is not reachable right now. Please try again in a few seconds."
       );
     } finally {
       setLoading(false);
@@ -64,18 +64,18 @@ function App() {
             <div>
               <h1>📰 Fake News Detection</h1>
               <p className="subtitle">
-                A complete end-to-end Machine Learning project where I detect
-                whether a news statement is likely to be{" "}
+                A full-stack <strong>Machine Learning</strong> project where I
+                check whether a news statement is more likely to be{" "}
                 <strong>fake</strong> or <strong>real</strong> using{" "}
                 <strong>TF-IDF</strong> features and a{" "}
-                <strong>Multinomial Naive Bayes</strong> model served via a
+                <strong>Multinomial Naive Bayes</strong> model running behind a
                 Flask API.
               </p>
             </div>
             <div className="header-right">
               <span className="badge">ML Project</span>
               <span className="status-pill">
-                ⚛ React  · 🐍 Flask API
+                ⚛ React · 🐍 Flask · 📦 scikit-learn
               </span>
             </div>
           </header>
@@ -163,11 +163,10 @@ function App() {
                     model.
                   </p>
                   <p className="note">
-                    ⚠ This is a machine learning prediction based on the
-                    training data used. It should be treated as a{" "}
-                    <strong>supporting signal</strong>, not final proof. Always
-                    verify important or sensitive information with trusted
-                    sources.
+                    ⚠ This is only a model prediction based on the training
+                    data. It should be used as a <strong>hint</strong>, not as
+                    final proof. Always double-check important news with
+                    trusted sources.
                   </p>
                 </div>
               )}
@@ -181,26 +180,23 @@ function App() {
             <div className="info-section">
               <h2>📘 Project Overview</h2>
               <p>
-                This web application was developed to understand how{" "}
-                <strong>Machine Learning (ML)</strong> and{" "}
+                I built this project to explore how{" "}
+                <strong>Machine Learning</strong> and{" "}
                 <strong>Natural Language Processing (NLP)</strong> can be used
-                in a practical, full-stack project. The focus is not only on
-                model accuracy, but also on how to serve the model through an
-                API and integrate it with a modern frontend.
+                in a real web application, not just in a notebook.
               </p>
               <p>
-                The idea is simple: the user enters a news headline or short
-                article, the text is converted into numerical features using{" "}
-                <strong>TF-IDF</strong>, and a{" "}
+                The flow is simple: the user enters some news text, the system
+                converts it into numerical features using{" "}
+                <strong>TF-IDF</strong>, and then a{" "}
                 <strong>Multinomial Naive Bayes</strong> classifier predicts
-                whether it is more likely to be <strong>fake</strong> or{" "}
-                <strong>real</strong>.
+                whether the text looks more like fake or real news based on the
+                training data.
               </p>
               <p>
-                Through this project, I practised data preprocessing, model
-                training, REST API design, and deployment using platforms like{" "}
-                <strong>Render</strong> (backend) and <strong>Vercel</strong>{" "}
-                (frontend).
+                This app helped me practise multiple skills together: text
+                preprocessing, model training, building a Flask API, and
+                connecting it to a React frontend deployed on the cloud.
               </p>
             </div>
           )}
@@ -208,15 +204,15 @@ function App() {
           {/* TAB: DATASET & SAMPLES */}
           {activeTab === "dataset" && (
             <div className="info-section">
-              <h2>📊 Dataset & Model Details</h2>
+              <h2>📊 Dataset & Samples</h2>
               <p>
-                The model is trained on a combined dataset containing thousands
-                of labeled news samples. Each news item is tagged as{" "}
-                <strong>fake</strong> or <strong>real</strong> based on its
-                source and verification.
+                The model is trained on a combined dataset of news articles
+                where each sample is labeled as <strong>fake</strong> or{" "}
+                <strong>real</strong>. For this project, the main goal is to
+                build a working pipeline from data → model → API → UI.
               </p>
               <ul>
-                <li>Text is cleaned (basic preprocessing) and lower-cased.</li>
+                <li>News text is cleaned (basic preprocessing) and lower-cased.</li>
                 <li>
                   Features are extracted using{" "}
                   <strong>TF-IDF (Term Frequency–Inverse Document
@@ -227,7 +223,7 @@ function App() {
                   <strong>scikit-learn</strong> is trained on these features.
                 </li>
                 <li>
-                  The trained model and TF-IDF vectorizer are stored as{" "}
+                  The trained model and TF-IDF vectorizer are saved as{" "}
                   <code>model.pkl</code> and <code>tfidf.pkl</code> and loaded
                   by the Flask backend.
                 </li>
@@ -240,17 +236,16 @@ function App() {
               </ul>
 
               <p className="note">
-                🔧 Future ideas: try transformer-based models (e.g. BERT), use
-                more recent datasets, and extend the app with support for
-                multiple languages.
+                🔧 In future, this can be extended with better datasets or deep
+                learning models (for example, BERT or other transformer-based
+                architectures).
               </p>
 
               <div className="examples-section">
-                <h3>Example Styles of Fake vs Real News</h3>
+                <h3>Example Fake vs Real Style News</h3>
                 <p>
-                  These are synthetic examples that roughly represent the style
-                  of content that often appears as fake vs real in common
-                  datasets.
+                  These are simple example sentences just to show the kind of
+                  text that usually appears as fake or real in a dataset.
                 </p>
 
                 <div className="examples-grid">
@@ -311,10 +306,9 @@ function App() {
             <div className="info-section">
               <h2>🛠 System Design & Technologies</h2>
               <p>
-                The application follows a realistic{" "}
-                <strong>frontend–backend</strong> architecture with a clear{" "}
-                <strong>ML model</strong> layer behind the API. This is similar
-                to how many production ML systems are structured.
+                The project uses a simple but realistic{" "}
+                <strong>frontend–backend</strong> architecture with a separate
+                ML model behind the API.
               </p>
 
               <div className="stack-grid">
@@ -322,7 +316,7 @@ function App() {
                   <h3>🖥 Frontend (Client)</h3>
                   <ul>
                     <li>React Single Page Application (SPA)</li>
-                    <li>Custom responsive layout using plain CSS</li>
+                    <li>Custom responsive UI built with plain CSS</li>
                     <li>Uses Fetch API to send JSON requests to the backend</li>
                     <li>
                       Reads the API base URL from{" "}
@@ -335,7 +329,7 @@ function App() {
                 <div className="stack-card">
                   <h3>⚙ Backend (API)</h3>
                   <ul>
-                    <li>Python 3 with Flask</li>
+                    <li>Python 3 + Flask web framework</li>
                     <li>REST endpoint: <code>POST /predict</code></li>
                     <li>Flask-CORS enabled for cross-origin requests</li>
                     <li>
@@ -367,15 +361,15 @@ function App() {
                       a prediction
                     </li>
                     <li>4️⃣ API returns the label as JSON</li>
-                    <li>5️⃣ UI displays the result in a readable format</li>
+                    <li>5️⃣ UI displays the result in a user-friendly way</li>
                   </ul>
                 </div>
               </div>
 
               <p className="note">
-                The goal is to keep the implementation understandable while
-                still showing a realistic ML workflow: data → model → API →
-                frontend → user.
+                The main aim is to clearly show the ML pipeline: data → model →
+                API → frontend → user, in a way that is easy to understand and
+                demo for an academic project or portfolio.
               </p>
             </div>
           )}
@@ -383,8 +377,8 @@ function App() {
           {/* Footer */}
           <footer className="footer">
             <span>
-              Developed by <strong>Sanjay Kumar</strong> · React · Flask
-              · Scikit-learn · TF-IDF · Naive Bayes
+              Designed & developed by <strong>Sanjay Kumar</strong> · React ·
+              Flask · scikit-learn
             </span>
           </footer>
         </div>
