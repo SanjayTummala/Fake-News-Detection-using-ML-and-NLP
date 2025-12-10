@@ -8,9 +8,7 @@ It combines a trained ML model, a Flask API, and a React frontend, all deployed 
 
 ## 🔗 Live Demo
 
-- 🌐 **Frontend (React UI):** https://fake-news-detection-using-ml-and-nlp.vercel.app/  
-- ⚙️ **Backend (Flask API):** https://fake-news-detection-using-ml-and-nlp.onrender.com  
-
+- 🌐 **Fake News Detector** https://fake-news-detection-using-ml-and-nlp.vercel.app/
 ---
 
 ## 🧩 Tech & Tools
@@ -24,21 +22,7 @@ It combines a trained ML model, a Flask API, and a React frontend, all deployed 
 
 ---
 
-## 🎨 Banner
 
-You can keep a simple banner image at the top of the repo (optional):
-
-`assets/banner.png`
-
-For example, a banner that says:
-
-> **Fake News Detector** – ML-powered news headline checker
-
-(Add the image to the repo later and reference it like this in Markdown:)
-
-`![Fake News Detector Banner](assets/banner.png)`
-
----
 
 ## 🚀 Features
 
@@ -103,7 +87,7 @@ The model and vectorizer are stored as:
       │   └─ tfidf.pkl     # TF-IDF vectorizer
       └─ README.md         # Project documentation
 
-*(your actual filenames like `api.py`/`app.py` may differ – adjust if needed)*
+
 
 ---
 
@@ -122,12 +106,6 @@ Add these images later inside an `assets/` folder and update paths:
 3. **Real Result Example (🟢)**  
    `assets/real-result.png`  
    _Example of a normal headline detected as Real._
-
-You can embed them like:
-
-- `![Home Screen](assets/home-screen.png)`  
-- `![Fake Result](assets/fake-result.png)`  
-- `![Real Result](assets/real-result.png)`  
 
 ---
 
