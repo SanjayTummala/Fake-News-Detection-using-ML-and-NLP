@@ -15,6 +15,7 @@ It combines a trained ML model, a Flask API, and a React frontend, all deployed 
 
 ## 🧩 Tech & Tools
 
+![License: GPL v3](https://img.shields.io/badge/License-GPLv3-blue.svg)
 ![React](https://img.shields.io/badge/Frontend-React-blue?logo=react)
 ![Flask](https://img.shields.io/badge/Backend-Flask-black?logo=flask)
 ![Python](https://img.shields.io/badge/Language-Python-3776AB?logo=python&logoColor=white)
