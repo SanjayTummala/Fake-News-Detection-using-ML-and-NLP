@@ -243,8 +243,7 @@ function App() {
                         three days can cure all types of cancer.
                       </li>
                       <li>
-                        A national bank has cancelled all existing loans taken
-                        before 2020 with no conditions.
+                        New study claims that eating only chocolate for a week can improve eyesight and increase height.
                       </li>
                       <li>
                         A new secret rule bans the use of social media after
