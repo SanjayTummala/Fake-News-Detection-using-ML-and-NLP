@@ -62,21 +62,16 @@ function App() {
           {/* Header */}
           <header className="card-header">
             <div>
-              <h1>📰 Fake News Detection</h1>
+              <h1>📰 Fake News Radar</h1>
               <p className="subtitle">
-                A full-stack <strong>Machine Learning</strong> project where I
-                check whether a news statement is more likely to be{" "}
-                <strong>fake</strong> or <strong>real</strong> using{" "}
-                <strong>TF-IDF</strong> features and a{" "}
-                <strong>Multinomial Naive Bayes</strong> model running behind a
-                Flask API.
+                Paste any headline or short news snippet and let this{" "}
+                <strong>ML-powered radar</strong> estimate whether it looks more
+                like <strong>fake</strong> or <strong>real</strong> news.
               </p>
             </div>
             <div className="header-right">
-              <span className="badge">ML Project</span>
-              <span className="status-pill">
-                ⚛ React · 🐍 Flask · 📦 scikit-learn
-              </span>
+              <span className="badge">Real-time ML Scanner</span>
+              <span className="status-pill">⚛ React · 🐍 Flask · 📦 scikit-learn</span>
             </div>
           </header>
 
@@ -92,19 +87,19 @@ function App() {
               className={`tab ${activeTab === "about" ? "active" : ""}`}
               onClick={() => setActiveTab("about")}
             >
-              📘 Project Overview
+              💡 How It Works
             </button>
             <button
               className={`tab ${activeTab === "dataset" ? "active" : ""}`}
               onClick={() => setActiveTab("dataset")}
             >
-              📊 Dataset & Samples
+              📊 Examples & Insights
             </button>
             <button
               className={`tab ${activeTab === "stack" ? "active" : ""}`}
               onClick={() => setActiveTab("stack")}
             >
-              🛠 System Design
+              🛠 Under The Hood
             </button>
           </div>
 
@@ -154,19 +149,18 @@ function App() {
                 >
                   <div className="result-header">
                     <span className="pill">
-                      {isFake ? "🔴 Fake News" : isReal ? "🟢 Real News" : "Result"}
+                      {isFake ? "🔴 Classified as Fake" : isReal ? "🟢 Classified as Real" : "Result"}
                     </span>
                   </div>
                   <p className="result-text">
-                    The input text has been classified as{" "}
-                    <strong>{result.toUpperCase()}</strong> by the trained
-                    model.
+                    The text you entered is estimated to be{" "}
+                    <strong>{result.toUpperCase()}</strong> based on the model’s
+                    understanding of past news data.
                   </p>
                   <p className="note">
-                    ⚠ This is only a model prediction based on the training
-                    data. It should be used as a <strong>hint</strong>, not as
-                    final proof. Always double-check important news with
-                    trusted sources.
+                    ⚠ This is an automated prediction, not a final verdict.
+                    Think of it as a second opinion before you trust or share
+                    something.
                   </p>
                 </div>
               )}
@@ -175,77 +169,69 @@ function App() {
             </>
           )}
 
-          {/* TAB: ABOUT / PROJECT OVERVIEW */}
+          {/* TAB: HOW IT WORKS */}
           {activeTab === "about" && (
             <div className="info-section">
-              <h2>📘 Project Overview</h2>
+              <h2>💡 How It Works</h2>
               <p>
-                I built this project to explore how{" "}
-                <strong>Machine Learning</strong> and{" "}
-                <strong>Natural Language Processing (NLP)</strong> can be used
-                in a real web application, not just in a notebook.
+                Fake News Radar uses a classic{" "}
+                <strong>Natural Language Processing (NLP)</strong> pipeline to
+                rate news text as fake or real-looking.
               </p>
               <p>
-                The flow is simple: the user enters some news text, the system
-                converts it into numerical features using{" "}
-                <strong>TF-IDF</strong>, and then a{" "}
-                <strong>Multinomial Naive Bayes</strong> classifier predicts
-                whether the text looks more like fake or real news based on the
-                training data.
+                Behind the scenes, it converts your text into numerical
+                features, feeds them into a trained{" "}
+                <strong>Machine Learning model</strong>, and returns a simple
+                label: <strong>fake</strong> or <strong>real</strong>.
               </p>
               <p>
-                This app helped me practise multiple skills together: text
-                preprocessing, model training, building a Flask API, and
-                connecting it to a React frontend deployed on the cloud.
+                It doesn&apos;t know the truth about the world, but it has
+                learned patterns from many examples of fake and real news and
+                tries to spot similar patterns in what you paste here.
               </p>
             </div>
           )}
 
-          {/* TAB: DATASET & SAMPLES */}
+          {/* TAB: DATASET & SAMPLES (renamed as Examples & Insights) */}
           {activeTab === "dataset" && (
             <div className="info-section">
-              <h2>📊 Dataset & Samples</h2>
+              <h2>📊 Examples & Insights</h2>
               <p>
-                The model is trained on a combined dataset of news articles
-                where each sample is labeled as <strong>fake</strong> or{" "}
-                <strong>real</strong>. For this project, the main goal is to
-                build a working pipeline from data → model → API → UI.
+                The model was trained on a collection of news headlines and
+                short articles that were already labeled as{" "}
+                <strong>fake</strong> or <strong>real</strong>. Over time it
+                learns the kind of wording, style and claims that appear more
+                often in fake content versus normal reporting.
               </p>
+
+              <h3>What happens to your text?</h3>
               <ul>
-                <li>News text is cleaned (basic preprocessing) and lower-cased.</li>
+                <li>Your text is cleaned and broken down into important words.</li>
                 <li>
-                  Features are extracted using{" "}
-                  <strong>TF-IDF (Term Frequency–Inverse Document
-                  Frequency)</strong>.
+                  A <strong>TF-IDF</strong> step turns those words into
+                  numerical features.
                 </li>
                 <li>
-                  A <strong>Multinomial Naive Bayes</strong> classifier from{" "}
-                  <strong>scikit-learn</strong> is trained on these features.
+                  A <strong>Multinomial Naive Bayes</strong> model looks at
+                  those features and chooses fake / real.
                 </li>
                 <li>
-                  The trained model and TF-IDF vectorizer are saved as{" "}
-                  <code>model.pkl</code> and <code>tfidf.pkl</code> and loaded
-                  by the Flask backend.
-                </li>
-                <li>
-                  Prediction endpoint:
-                  <br />
-                  <code>POST /predict</code> with JSON body{" "}
-                  <code>{`{ "text": "your news text here" }`}</code>.
+                  The web app shows the result in a simple, friendly format.
                 </li>
               </ul>
 
               <p className="note">
-                🔧 In future, this can be extended with better datasets or deep
-                learning models (for example, BERT or other transformer-based
-                architectures).
+                None of your inputs are stored or logged here — this is just a
+                demo tool for exploring how an ML model reacts to different
+                headlines.
               </p>
 
               <div className="examples-section">
-                <h3>Example Fake vs Real Style News</h3>
+                <h3>Try Text Like This</h3>
                 <p>
-                  These are simple example sentences just to show the kind of
-                  text that usually appears as fake or real in a dataset.
+                  These are example styles of news that commonly appear closer
+                  to fake or real in training data. You can copy them into the
+                  detector tab and see how the model reacts.
                 </p>
 
                 <div className="examples-grid">
@@ -301,25 +287,26 @@ function App() {
             </div>
           )}
 
-          {/* TAB: TECH & ARCHITECTURE / SYSTEM DESIGN */}
+          {/* TAB: UNDER THE HOOD / SYSTEM DESIGN */}
           {activeTab === "stack" && (
             <div className="info-section">
-              <h2>🛠 System Design & Technologies</h2>
+              <h2>🛠 Under The Hood</h2>
               <p>
-                The project uses a simple but realistic{" "}
-                <strong>frontend–backend</strong> architecture with a separate
-                ML model behind the API.
+                Fake News Radar is a small but complete{" "}
+                <strong>full-stack ML app</strong>. The frontend talks to a
+                separate backend which loads the ML model and returns JSON
+                responses.
               </p>
 
               <div className="stack-grid">
                 <div className="stack-card">
-                  <h3>🖥 Frontend (Client)</h3>
+                  <h3>🖥 Frontend</h3>
                   <ul>
                     <li>React Single Page Application (SPA)</li>
-                    <li>Custom responsive UI built with plain CSS</li>
-                    <li>Uses Fetch API to send JSON requests to the backend</li>
+                    <li>Custom responsive layout using plain CSS</li>
+                    <li>Uses Fetch API to call the backend</li>
                     <li>
-                      Reads the API base URL from{" "}
+                      API base URL comes from{" "}
                       <code>REACT_APP_API_URL</code> environment variable
                     </li>
                     <li>Deployed on Vercel</li>
@@ -327,7 +314,7 @@ function App() {
                 </div>
 
                 <div className="stack-card">
-                  <h3>⚙ Backend (API)</h3>
+                  <h3>⚙ Backend</h3>
                   <ul>
                     <li>Python 3 + Flask web framework</li>
                     <li>REST endpoint: <code>POST /predict</code></li>
@@ -341,35 +328,35 @@ function App() {
                 </div>
 
                 <div className="stack-card">
-                  <h3>🤖 ML & NLP Layer</h3>
+                  <h3>🤖 ML Layer</h3>
                   <ul>
-                    <li>Implemented using scikit-learn</li>
-                    <li>TF-IDF vectorizer for text feature extraction</li>
+                    <li>scikit-learn based pipeline</li>
+                    <li>TF-IDF vectorizer for text features</li>
                     <li>Multinomial Naive Bayes classifier</li>
-                    <li>Binary classification: fake vs real</li>
-                    <li>Model serialized using Python pickle</li>
+                    <li>Binary output: fake vs real</li>
+                    <li>Model persisted via Python pickle</li>
                   </ul>
                 </div>
 
                 <div className="stack-card">
                   <h3>🔗 End-to-End Flow</h3>
                   <ul>
-                    <li>1️⃣ User submits text from the React UI</li>
+                    <li>1️⃣ User enters text on the React UI</li>
                     <li>2️⃣ Frontend sends a POST request to the Flask API</li>
                     <li>
-                      3️⃣ Backend vectorizes the text and calls the ML model for
+                      3️⃣ Backend vectorizes the text and asks the ML model for
                       a prediction
                     </li>
                     <li>4️⃣ API returns the label as JSON</li>
-                    <li>5️⃣ UI displays the result in a user-friendly way</li>
+                    <li>5️⃣ UI displays the result with a clear status badge</li>
                   </ul>
                 </div>
               </div>
 
               <p className="note">
-                The main aim is to clearly show the ML pipeline: data → model →
-                API → frontend → user, in a way that is easy to understand and
-                demo for an academic project or portfolio.
+                The focus here is on having a clean, working pipeline rather
+                than chasing the perfect accuracy score. It&apos;s a playground
+                to experiment with news, text and ML.
               </p>
             </div>
           )}
@@ -377,8 +364,8 @@ function App() {
           {/* Footer */}
           <footer className="footer">
             <span>
-              Designed & developed by <strong>Sanjay Kumar</strong> · React ·
-              Flask · scikit-learn
+              Designed & built as a personal project by{" "}
+              <strong>Sanjay Kumar</strong> · React · Flask · scikit-learn
             </span>
           </footer>
         </div>
